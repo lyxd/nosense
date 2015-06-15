@@ -1,0 +1,16 @@
+{
+  "name": "nosense",
+  "version": "1.0.0",
+  "description": "Why? I don't know...",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "no",
+    "sense",
+    "tlen"
+  ],
+  "author": "lyxd1",
+  "license": "MIT"
+}
