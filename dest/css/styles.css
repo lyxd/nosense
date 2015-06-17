@@ -1025,8 +1025,9 @@ img {
     border-radius: 5px;
     width: 50%;
     max-height: 70%;
+    height: auto;
     margin: 0 auto;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 
