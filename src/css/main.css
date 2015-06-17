@@ -1,0 +1,634 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: #2f2f2f url(../img/bg.jpeg);
+    background-size: cover;
+    font: 20px/normal "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    padding: 1px 0;
+}
+
+/* BACKGROUNDS */
+
+.p-ways,
+.p-random,
+.p-cats {
+    background: url(/img/bg2.jpg);
+    background-size: cover;
+}
+
+
+
+input {
+    position: relative;
+    color: #fff;
+    background: rgba(12, 12, 12, 0.6);
+    transition: background .3s ease;
+}
+
+input:hover,
+input:focus {
+    background: rgba(12, 12, 12, 0.9);
+}
+
+.input-tooltip {
+    position: relative;
+}
+
+.input-tooltip:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    right: -100px;
+    width: 75px;
+    height: 26px;
+    padding: 5px;
+    font-size: 17px;
+    text-align: center;
+    background: #000;
+    line-height: 26px;
+    opacity: 0;
+    content: 'A-z, 1-0';
+    transition: opacity .3s ease;
+}
+
+.input-tooltip.show-tip:after {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+    border-bottom: 3px dashed rgba(236, 20, 20, 0.6);
+    padding-bottom: 10px;
+}
+
+p {
+    color: lemonchiffon;
+    text-indent: 20px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.tip {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #8E4040;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background: rgba(45, 37, 37, 0.8);
+    color: #fff;
+    transition: all .3s ease;
+    z-index: 10;
+}
+
+.menu.open {
+    right: 0;
+}
+
+.menu:after {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(236, 20, 20, 0.6);
+    top: 50%;
+    margin-top: -30px;
+    left: -30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .3s ease;
+    content: '';
+}
+
+.menu:hover:after {
+    background: rgba(236, 20, 20, 0.8);
+}
+
+.menu:before {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+    content: '';
+}
+
+.menu-list {
+    width: 140px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 90px;
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    position: relative;
+    margin: 5px 0;
+}
+
+.menu-item:before,
+.menu-item:after {
+    position: absolute;
+    transition: color .3s ease;
+}
+
+.menu-item:nth-child(2n):before,
+.menu-item:nth-child(2n):after {
+    content: '\2605';
+}
+
+.menu-item:nth-child(2n+1):before,
+.menu-item:nth-child(2n+1):after {
+    content: '\2764';
+}
+
+.menu-item:before {
+    left: -60px;
+}
+
+.menu-item:after {
+    right: 0;
+}
+
+.menu-item:hover:before,
+.menu-item:hover:after {
+    display: block;
+    color: rgba(236, 20, 20, 0.6);;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    transition: color .1s ease;
+}
+
+.menu-item:hover a {
+    color: rgba(236, 20, 20, 0.6);;
+    text-decoration: dashed;
+}
+
+
+/* HELP */
+
+.help {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(31, 29, 29, 0.72);
+    z-index: 9;
+    text-align: center;
+}
+
+.help:before {
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+    content: '';
+}
+
+.help.open {
+    display: block;
+}
+
+.help-content {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    width: 75%;
+    overflow: auto;
+    height: 100%;
+}
+
+.help-columns {
+    display: table;
+    width: 100%;
+}
+
+.help-columns .left-col,
+.help-columns .right-col {
+    width: 50%;
+    display: table-cell;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.help-columns .left-col {
+    background: rgba(255, 46, 159, 0.12);
+    border-radius: 10px 0 0 10px;
+}
+
+.help-columns .right-col {
+    background: rgba(46, 255, 224, 0.12);
+    border-radius: 0 10px 10px 0;
+}
+
+.help .users {
+    width: 100%;
+}
+
+.help .users th,
+.help .users td {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+/* LOGIN PAGE */
+
+.p-login h1 {
+    margin-bottom: 20px;
+}
+
+.p-login h2 > span {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #000;
+}
+
+.p-login .tip {
+    position: absolute;
+}
+
+.p-login .right-tip {
+    top: 24%;
+    left: 5%;
+    transform: rotate(-10deg);
+}
+
+.p-login .left-tip {
+    right: 2%;
+    bottom: 16%;
+    transform: rotate(15deg);
+}
+
+.p-login form {
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.p-login form label,
+.p-login form input {
+    display: block;
+    width: 100%;
+}
+
+.p-login form label {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.p-login form input {
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 25px;
+    box-sizing: border-box;
+    font-size: 25px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.p-login form > input[type="submit"] {
+    width: 50%;
+    margin: 25px auto 0;
+}
+
+.p-login .login-form {
+    margin: 0 auto 90px;
+}
+
+.p-login .register-form {
+    margin-bottom: 25px;
+}
+
+.p-login .register-form input {
+    color: #8E4040;
+}
+
+.p-login .register-form .register-form-name {
+    margin-bottom: 15px;
+}
+
+/* NO SENSE */
+
+.p-nosense .strange-exit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0,0,0,.7);
+    border-radius: 50%;
+    transition: all .3s ease;
+    animation: strange-exit-loop 5s infinite;
+}
+
+.p-nosense .strange-exit-first,
+.p-nosense .strange-exit-second,
+.p-nosense .strange-exit-third {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    transition: all .3s ease-out;
+}
+
+.p-nosense .strange-exit-first {
+    top: 30px;
+    left: 55px;
+    background: rgba(133, 45, 177, 0.51);
+    z-index: 2;
+}
+
+.p-nosense .strange-exit-second {
+    top: 45px;
+    right: 20px;
+    background: rgba(0, 181, 195, 0.68);
+    z-index: 3;
+}
+
+.p-nosense .strange-exit-third {
+    bottom: 50px;
+    left: 50%;
+    margin-left: -60px;
+    background: green;
+    z-index: 1;
+}
+
+.p-nosense .strange-exit-secret {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    z-index: 0;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.p-nosense .strange-exit:hover .strange-exit-first {
+    top: -20px;
+    left: -20px;
+    border-radius: 50%;
+    background: rgba(255, 58, 58, 0.59);
+}
+
+.p-nosense .strange-exit:hover .strange-exit-second {
+    top: 20px;
+    right: -24px;
+    border-radius: 50%;
+    background: rgba(136, 62, 228, 0.68);
+}
+
+.p-nosense .strange-exit:hover .strange-exit-third {
+    bottom: -42px;
+    left: 45%;
+    border-radius: 50%;
+    background: rgba(41, 255, 56, 0.54);
+}
+
+.p-nosense .strange-exit:hover .strange-exit-secret {
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+
+}
+
+/* WAYS */
+
+.random-icon,
+.cat-icon {
+    position: absolute;
+    width: 20%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.random-icon a,
+.cat-icon a {
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.random-icon:hover,
+.cat-icon:hover {
+    transform: scale(1.3);
+}
+
+.random-icon {
+    top: 40%;
+    left: 20%;
+}
+
+.cat-icon:after,
+.random-icon:after {
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+    background: #000;
+    color: brown;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.random-icon:after {
+    content: "Рандом";
+}
+
+.cat-icon:after {
+    content: "Коты";
+}
+
+.random-icon:hover:after,
+.cat-icon:hover:after{
+    display: block;
+    opacity: 1;
+}
+
+
+.cat-icon {
+    top: 40%;
+    right: 20%;
+}
+
+
+/* RANDOM */
+
+.random-field {
+    width: 80%;
+    margin: 100px auto;
+    background: rgba(24, 5, 12, 0.94);
+    border-radius: 10px;
+    overflow: scroll;
+    max-height: 500px;
+}
+
+.random-item {
+    position: relative;
+    width: 14%;
+    margin: 0 3% 50px;
+    height: 80px;
+    float: left;
+    opacity: .64;
+}
+
+.random-body {
+    position: absolute;
+    border-radius: 50%;
+    transition: all .3s cubic-bezier(0, 0, 0.55, 2.13);
+    transform: scale(.2);
+    cursor: pointer;
+}
+
+.random-body.loaded {
+    transform: scale(1);
+}
+
+.random-body a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.add-item {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 100px;
+    left: 50%;
+    margin-left: -20px;
+    background: #000;
+    line-height: 48px;
+    font-size: 60px;
+    color: white;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* CATS */
+
+.cats-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: rgba(0,0,0,.6);
+    display: table;
+}
+
+.random-cat {
+    position: absolute;
+    border-radius: 50%;
+    width: 90px;
+    margin-left: -45px;
+    top: 90px;
+    left: 50%;
+    font-size: 90px;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.56);
+    user-select: none;
+}
+
+.cats-wrap-in {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cats {
+    background: rgba(25, 12, 30, 0.92);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    max-height: 70%;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+
+/* Clear fix */
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@keyframes strange-exit-loop {
+    0% {
+        transform: translate3d(3px, 0, 0) rotateZ(0deg);
+    }
+    25% {
+        transform: translate3d(-1px, -3px, 0) rotateZ(-2deg);
+    }
+    50% {
+        transform: translate3d(-5px, 0, 0) rotateZ(3deg);
+    }
+    75% {
+        transform: translate3d(-2px, -2px, 0) rotateZ(-2deg);
+    }
+    100% {
+        transform: translate3d(3px, 0, 0) rotateZ(0deg);
+    }
+}
+
+
+
+@media all and (max-width: 900px) {
+    .p-login form {
+        width: 50%;
+    }
+
+    .p-login .tip {
+        display: none;
+    }
+}
