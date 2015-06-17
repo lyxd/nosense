@@ -219,7 +219,7 @@ app.post('/cat', function(req, res, next) {
 
 
 //Start server
-var server = app.listen(3000, function () {
+var server = app.listen(80, function () {
     var host = server.address().address;
     var port = server.address().port;
     console.log('Server started at: ', host, port);
