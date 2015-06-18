@@ -575,6 +575,11 @@ img {
     cursor: pointer;
     color: rgba(255, 0, 0, 0.56);
     user-select: none;
+    transition: all .3s ease;
+}
+
+.random-cat:hover {
+    transform: scale(2);
 }
 
 .cats-wrap-in {
